@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review - Ibiza Barbershop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Make stars inline and avoid absolute positioning so they won't overlap the textarea */
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+        .star-rating > input { display: none; }
+        .star-rating > label {
+            display: inline-block;
+            width: auto;
+            color: #ccc;
+            cursor: pointer;
+            padding: 0 6px;
+            line-height: 1;
+            font-size: inherit;
+        }
+        .star-rating > label::before {
+            content: "\f005";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: inherit;
+            display: inline-block;
+        }
+        .star-rating > label:hover::before,
+        .star-rating > label:hover ~ label::before,
+        .star-rating > input:checked ~ label::before {
+            color: #ffca08;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <section id="review-hero" class="review-section-bg">
+            <nav>
+                <div class="menu-icon"><i class="fas fa-bars text-gold"></i></div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="price.html">Pricelist</a>
+                    <a href="location.html">Location</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="review.html" class="active">Review</a>
+                </div>
+                <div class="auth-buttons">
+                    <a href="#" class="btn" onclick="showSignIn()">Sign In</a>
+                    <a href="#" class="btn" onclick="showLogin()">Login</a>
+                </div>
+            </nav>
+
+            <div class="review-wrapper">
+                <div class="review-header-text">
+                    <h2 class="serif-font">Share Your Experience</h2>
+                    <p>Pendapat Anda membantu kami menjadi lebih baik</p>
+                </div>
+
+                <div class="review-card-form">
+                    <div class="user-info-review">
+                        <div class="user-avatar-placeholder">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-details">
+                            <h5>Guest User</h5>
+                            <span>posting publicly</span>
+                        </div>
+                    </div>
+
+                    <form action="#">
+                        <div class="star-rating">
+                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Perfect"></label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Great"></label>
+                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Good"></label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Bad"></label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Poor"></label>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="Share details of your own experience at this place..."></textarea>
+                        </div>
+
+                        <div class="upload-btn-wrapper">
+                            <button class="btn-upload"><i class="fas fa-camera"></i> Add photos & videos</button>
+                            <input type="file" name="myfile" />
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel">Cancel</button>
+                            <button type="submit" class="btn-post">Post Review</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <div class="review-header">
+                <h4>WHAT OTHERS SAY</h4>
+                <h2>RECENT REVIEWS</h2>
+            </div>
+            <div class="reviews-container">
+                <div class="review-card">
+                    <div class="avatar" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                    <div class="stars-static text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">"Barbershop ramah sekali, komunikasinya baik. Pelayanan super dan promo menarik."</p>
+                    <p class="client-name">Stanley Beo</p>
+                </div>
+                <div class="review-card">
+                    <div class="avatar" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
+                    <div class="stars-static text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    <p class="review-text">"Pelayanan cepat dan ramah, tukang potong langganan anak-anak saya."</p>
+                    <p class="client-name">Riski Wahyuningtias</p>
+                </div>
+                <div class="review-card">
+                    <div class="avatar" style="background-image: url('https://randomuser.me/api/portraits/men/85.jpg');"></div>
+                    <div class="stars-static text-gold"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">"Hasil cukurnya seperti yg saya harapkan. Sudah 3 kali kesana dan masih enggak mengecewakan."</p>
+                    <p class="client-name">Rizki Bagus</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-section">
+            <div class="footer-bottom">
+                <h2 class="serif-font">CONTACT US</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h5>ADDRESS</h5>
+                        <p>Ibiza Barbershop<br>Surabaya, Jawa Timur.</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h5>EMAIL</h5>
+                        <p>ibizabarbershop@gmail.com</p>
+                    </div>
+                </div>
+                <div class="copyright">
+                    &copy; Copyright Ibiza Barbershop 2024
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="overlay" id="overlay-signin">
+        <div class="overlay-content">
+            <div class="overlay-logo">
+                 <div class="hero-logo" style="padding: 0; margin-right: 50px;">
+                    <div class="logo-decoration text-gold"><i class="fas fa-crown"></i></div>
+                    <h1 class="serif-font" style="font-size: 2.5rem;">IBIZA</h1>
+                    <div class="icon-center text-gold" style="font-size: 2rem; margin: 5px 0;"><i class="fas fa-cut"></i></div>
+                    <span class="serif-font" style="font-size: 1rem;">BARBERSHOP</span>
+                </div>
+            </div>
+            <div class="overlay-form-container">
+                <h2>Sign In</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="signin-name">Name</label>
+                        <input type="text" id="signin-name" name="name">
+                    </div>
+                    <div class="input-group">
+                        <label for="signin-username">Username</label>
+                        <input type="text" id="signin-username" name="username">
+                    </div>
+                    <div class="input-group">
+                        <label for="signin-password">Password</label>
+                        <input type="password" id="signin-password" name="password">
+                    </div>
+                    <button type="submit" class="overlay-btn">Sign In</button>
+                </form>
+                <p class="overlay-footer">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay-login">
+        <div class="overlay-content">
+            <div class="overlay-logo">
+                <div class="hero-logo" style="padding: 0; margin-right: 50px;">
+                    <div class="logo-decoration text-gold"><i class="fas fa-crown"></i></div>
+                    <h1 class="serif-font" style="font-size: 2.5rem;">IBIZA</h1>
+                    <div class="icon-center text-gold" style="font-size: 2rem; margin: 5px 0;"><i class="fas fa-cut"></i></div>
+                    <span class="serif-font" style="font-size: 1rem;">BARBERSHOP</span>
+                </div>
+            </div>
+            <div class="overlay-form-container">
+                <h2>Login</h2>
+                <p class="login-subtitle">Log in to your account</p>
+                <form>
+                    <div class="input-group">
+                        <label for="login-username">Username</label>
+                        <input type="text" id="login-username" name="username">
+                    </div>
+                    <div class="input-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password">
+                    </div>
+                    <button type="submit" class="overlay-btn">Log In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSignIn() {
+            document.getElementById('overlay-signin').style.display = 'flex';
+            document.getElementById('overlay-login').style.display = 'none';
+        }
+
+        function showLogin() {
+            document.getElementById('overlay-login').style.display = 'flex';
+            document.getElementById('overlay-signin').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('overlay')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
